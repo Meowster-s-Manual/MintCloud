@@ -7,8 +7,8 @@ project "MCEngine"
     objdir("../bin-int/" .. outputdir .. "/%{prj.name}")
     
     files {
-        "%{prj.name}/src/**.cpp",
-        "%{prj.name}/src/**.h"
+        "**.cpp",
+        "**.h"
     }
     
     includedirs {}

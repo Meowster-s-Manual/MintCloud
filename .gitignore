@@ -1,6 +1,13 @@
 # Vendor folder
 /vendor
 
+#VS Folder
+/.vs
+
+Binary folders
+/bin 
+/bin-int
+
 # Prerequisites
 *.d
 

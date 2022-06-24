@@ -6,6 +6,7 @@ workspace "MintCloud"
 outputdir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
 include "MCEngine"
+include "MCGame"
 
 newaction {
     trigger = "clean",
