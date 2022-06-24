@@ -4,9 +4,14 @@
 #VS Folder
 /.vs
 
-Binary folders
+#Binary folders
 /bin 
 /bin-int
+
+#Visual Studio files
+*.vcxproj
+*vcxproj.user
+*.sln
 
 # Prerequisites
 *.d
