@@ -3,8 +3,8 @@ project "MCEngine"
     language "C++"
     cppdialect "C++20"
 
-    targetdir("../bin/" .. outputdir .. "/%{prj.name}")
-    objdir("../bin-int/" .. outputdir .. "/%{prj.name}")
+    targetdir("$(SolutionDir)" .. outputdir .. "/bin//%{prj.name}")
+    objdir("$(SolutionDir)" .. outputdir .. "/bin-int/%{prj.name}")
     
     files {
         "**.cpp",
@@ -16,4 +16,6 @@ project "MCEngine"
     filter "system:windows"
         staticruntime "On"
         systemversion "latest"
-        defines {}
+        defines{"BUILD_DLL"}
+
+        postbuildcommands { "{COPY} %{cfg.buildtarget.relpath} $(SolutionDir)" .. outputdir .. "/bin/MCGame" }

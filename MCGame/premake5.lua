@@ -1,10 +1,10 @@
 project "MCGame"
-    kind "WindowedApp"
+    kind "ConsoleApp"
     language "C++"
     cppdialect "C++20"
 
-    targetdir("../build/" .. outputdir .. "/%{prj.name}")
-    objdir("../build-int/" .. outputdir .. "/%{prj.name}")
+    targetdir("$(SolutionDir)" .. outputdir .. "/bin//%{prj.name}")
+    objdir("$(SolutionDir)" .. outputdir .. "/bin-int/%{prj.name}")
 
     files {
         "**.cpp",
@@ -14,3 +14,11 @@ project "MCGame"
     includedirs {
         "$(SolutionDir)MCEngine"
     }
+
+    links {
+        "MCEngine"
+    }
+
+    filter "system:windows"
+        staticruntime "On"
+        systemversion "latest"

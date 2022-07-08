@@ -5,8 +5,7 @@
 /.vs
 
 #Binary folders
-/bin 
-/bin-int
+/build
 
 #Visual Studio files
 *.vcxproj
