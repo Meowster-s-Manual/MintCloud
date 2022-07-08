@@ -18,4 +18,7 @@ project "MCEngine"
         systemversion "latest"
         defines{"BUILD_DLL"}
 
-        postbuildcommands { "{COPY} %{cfg.buildtarget.relpath} $(SolutionDir)" .. outputdir .. "/bin/MCGame" }
+        postbuildcommands { 
+            "{MKDIR}  $(SolutionDir)" .. outputdir .. "/bin/MCGame",  
+            "{COPY} %{cfg.buildtarget.relpath} $(SolutionDir)" .. outputdir .. "/bin/MCGame"
+        }
