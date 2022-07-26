@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EventSystem">
+      <UniqueIdentifier>{631C50F7-CFA7-BDBB-D8B8-40B044C319BC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MCEngine.h" />
+    <ClInclude Include="src\Core.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventSystem\EventSystem.h">
+      <Filter>src\EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventSystem\Events\Event.h" />
+    <ClInclude Include="src\EventSystem\Events\KeyboardEvent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\EngineApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

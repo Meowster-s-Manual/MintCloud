@@ -1,19 +1,32 @@
 #pragma once
 #include "../Core.h"
+#include <functional>
+
+#include "Events/Event.h"
 
 #define BUFFER_SIZE 200
 
 namespace MCEngine {
-	class EventSystem
+	class ENGINE_API EventSystem
 	{
+		template<typename T>
+		using eventFn = std::function<bool(T&)>;
 	private:
-		void* buffer[BUFFER_SIZE];
+		static const Event* buffer[BUFFER_SIZE];
+		Event& systemEvent;
 		/*Need array/enum/hashmap to hold indiv event classes*/
 	public:
-		EventSystem();
-		~EventSystem();
-		int addEvent(void *Event);
-		int removeEvent(void *Event);
-		int eventHandler(void *Event);
+		EventSystem(Event& event)
+			: systemEvent(event){}
+
+		template<typename T>
+		bool eventHandler(eventFn<T> func)
+		{
+			if (systemEvent.getEventType() == T::getStaticType()) {
+				systemEvent.eventHandled = func(*(T*)&systemEvent);
+				return true;
+			}
+			return false;
+		}
 	};
 }
