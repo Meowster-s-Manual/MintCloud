@@ -11,6 +11,7 @@
 *.vcxproj
 *vcxproj.user
 *.sln
+*.filters
 
 # Prerequisites
 *.d

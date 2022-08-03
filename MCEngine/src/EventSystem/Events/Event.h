@@ -11,13 +11,13 @@ class EventSystem;
 	virtual EventType getEventType() const override { return getStaticType(); }\
 	virtual const char* getEventName() const override { return #type; }
 
-#define EVENT_SIEVE(filter) virtual int getEventFilters() const override { return filter; }
+#define EVENT_FILTER(filter) virtual int getEventFilters() const override { return filter; }
 
 namespace MCEngine {
 	enum class EventType
 	{
 		None = 0,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
@@ -30,7 +30,8 @@ namespace MCEngine {
 		EventFilterMouseButton     = BIT(3)
 	};
 
-	class ENGINE_API Event {
+	class ENGINE_API Event 
+	{
 		friend class EventSystem;
 	protected:
 		bool eventHandled = false;
@@ -39,10 +40,8 @@ namespace MCEngine {
 		virtual const char* getEventName() const = 0;
 		virtual int getEventFilters() const = 0;
 		virtual std::string debugString() const { return getEventName(); }
-		bool isInFilter(EventFilter filter);
-	};
-
-	inline bool Event::isInFilter(EventFilter filter) {
-		return Event::getEventFilters() & filter;
+		bool isInFilter(EventFilter filter) {
+			return Event::getEventFilters() & filter;
+		};
 	};
 }
