@@ -30,12 +30,12 @@ namespace MCEngine {
 
 		std::string debugString() const override
 		{
-			std::stringstream ss;
-			ss << "KeyboardPressEvent: " << keyboardCode << " (repeat = " << isKeyRepeat << ")";
-			return ss.str();
+			std::stringstream stream;
+			stream << "KeyboardPressEvent: " << keyboardCode << " (repeat = " << isKeyRepeat << ")";
+			return stream.str();
 		}
 
-		EVENT_GETTER(KeyPressed)
+		EVENT_GETTER(KeyPress)
 	};
 
 	class KeyboardReleaseEvent : public KeyboardEvent
@@ -46,27 +46,27 @@ namespace MCEngine {
 
 		std::string debugString() const override
 		{
-			std::stringstream ss;
-			ss << "KeyboardReleaseEvent: " << keyboardCode;
-			return ss.str();
+			std::stringstream stream;
+			stream << "KeyboardReleaseEvent: " << keyboardCode;
+			return stream.str();
 		}
 
-		EVENT_GETTER(KeyReleased)
+		EVENT_GETTER(KeyRelease)
 	};
 
-	class KeyboardTypedEvent : public KeyboardEvent
+	class KeyboardTypeEvent : public KeyboardEvent
 	{
 	public:
-		KeyboardTypedEvent(const int keyCode)
+		KeyboardTypeEvent(const int keyCode)
 			: KeyboardEvent(keyCode) {}
 
 		std::string debugString() const override
 		{
-			std::stringstream ss;
-			ss << "KeyboardTypedEvent: " << keyboardCode;
-			return ss.str();
+			std::stringstream stream;
+			stream << "KeyboardTypedEvent: " << keyboardCode;
+			return stream.str();
 		}
 
-		EVENT_GETTER(KeyTyped)
+		EVENT_GETTER(KeyType)
 	};
 }

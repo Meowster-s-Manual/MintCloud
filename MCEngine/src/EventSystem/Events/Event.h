@@ -17,8 +17,8 @@ namespace MCEngine {
 	enum class EventType
 	{
 		None = 0,
-		KeyPressed, KeyReleased, KeyTyped,
-		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
+		KeyPress, KeyRelease, KeyType,
+		MouseButtonPress, MouseButtonRelease, MouseMove, MouseScroll
 	};
 
 	enum EventFilter
@@ -40,8 +40,9 @@ namespace MCEngine {
 		virtual const char* getEventName() const = 0;
 		virtual int getEventFilters() const = 0;
 		virtual std::string debugString() const { return getEventName(); }
-		bool isInFilter(EventFilter filter) {
-			return Event::getEventFilters() & filter;
+		bool isInFilter(EventFilter filter) 
+		{
+			return getEventFilters() & filter;
 		};
 	};
 }
