@@ -1,5 +1,5 @@
 #pragma once
-#include "Core.h"
+#include "Macros.h"
 
 namespace MCEngine {
 	class ENGINE_API EngineApp
@@ -13,4 +13,3 @@ namespace MCEngine {
 
 	};
 }
-

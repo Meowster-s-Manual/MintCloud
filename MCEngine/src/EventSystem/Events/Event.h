@@ -1,7 +1,4 @@
 #pragma once
-#include "../../Core.h"
-
-#include <string>
 
 // forward declaration
 class EventSystem;

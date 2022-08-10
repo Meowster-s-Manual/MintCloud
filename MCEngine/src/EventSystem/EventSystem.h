@@ -1,7 +1,5 @@
 #pragma once
-#include "../Core.h"
-#include <functional>
-
+#include "../Macros.h"
 #include "Events/Event.h"
 
 #define BUFFER_SIZE 200

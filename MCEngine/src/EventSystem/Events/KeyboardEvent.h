@@ -1,6 +1,5 @@
 #pragma once
 #include "Event.h"
-#include <sstream>
 
 namespace MCEngine {
 	class ENGINE_API KeyboardEvent: public Event 

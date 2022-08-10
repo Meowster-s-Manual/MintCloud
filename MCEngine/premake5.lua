@@ -13,10 +13,13 @@ project "MCEngine"
     
     includedirs {}
 
+    pchheader "PCH.h"
+    pchsource "./src/PCH.cpp"
+
     filter "system:windows"
         staticruntime "On"
         systemversion "latest"
-        defines{"BUILD_DLL"}
+        defines{"WIN_OS","BUILD_DLL"}
 
         postbuildcommands { 
             "{MKDIR}  $(SolutionDir)" .. outputdir .. "/bin/MCGame",  

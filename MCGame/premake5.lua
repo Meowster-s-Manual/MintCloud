@@ -22,3 +22,4 @@ project "MCGame"
     filter "system:windows"
         staticruntime "On"
         systemversion "latest"
+        defines{"WIN_OS"}
