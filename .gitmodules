@@ -1,0 +1,3 @@
+[submodule "MCEngine/external/spdlog"]
+	path = MCEngine/external/spdlog
+	url = https://github.com/gabime/spdlog.git
