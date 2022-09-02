@@ -12,7 +12,7 @@ project "MCGame"
     }
 
     includedirs {
-        "$(SolutionDir)MCEngine"
+        "$(SolutionDir)MCEngine/include"
     }
 
     links {
