@@ -12,7 +12,8 @@ project "MCGame"
     }
 
     includedirs {
-        "$(SolutionDir)MCEngine/include"
+        "$(SolutionDir)MCEngine/include",
+        "$(SolutionDir)MCEngine/external/spdlog/include"
     }
 
     links {

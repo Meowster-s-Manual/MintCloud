@@ -7,11 +7,11 @@ project "MCEngine"
     objdir("$(SolutionDir)" .. outputdir .. "/bin-int/%{prj.name}")
     
     files {
-        "**.cpp",
-        "**.h"
+        "./src/**.cpp",
+        "./src/**.h"
     }
     
-    includedirs {}
+    includedirs {"$(SolutionDir)MCEngine/external/spdlog/include"}
 
     pchheader "PCH.h"
     pchsource "./src/PCH.cpp"
