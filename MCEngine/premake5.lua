@@ -10,11 +10,17 @@ project "MCEngine"
         "./src/**.cpp",
         "./src/**.h"
     }
-    
-    includedirs {"$(SolutionDir)MCEngine/external/spdlog/include"}
 
-    pchheader "PCH.h"
-    pchsource "./src/PCH.cpp"
+    includedirs {"$(SolutionDir)MCEngine/src"}
+
+    externalincludedirs {
+        "$(SolutionDir)MCEngine/external/spdlog/include"
+    }
+
+    externalwarnings "Off"
+
+    pchheader "pch.h"
+    pchsource "./src/pch.cpp"
 
     filter "system:windows"
         staticruntime "On"

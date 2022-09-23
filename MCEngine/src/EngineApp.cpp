@@ -1,30 +1,36 @@
-#include "PCH.h"
+#include "pch.h"
 #include "EngineApp.h"
 
 #include "EventSystem/Events/KeyboardEvent.h"
 #include "EventSystem/Events/MouseEvent.h"
 
-using namespace MCEngine;
+#include "Logger/Logger.h"
 
-EngineApp::EngineApp()
-{
-}
+namespace MCEngine {
+	EngineApp::EngineApp()
+	{
+	}
 
-EngineApp::~EngineApp()
-{
-}
+	EngineApp::~EngineApp()
+	{
+	}
 
-int EngineApp::start()
-{
-	KeyboardPressEvent e(21, false);
-	std::cout << e.debugString() << std::endl;
+	int EngineApp::start()
+	{
+		Logger::init();
+		KeyboardPressEvent e(21, false);
+		//std::cout << e.debugString() << std::endl;
+		MINT_INFO(e.debugString());
+		MINT_INFO(2323232);
 
-	MouseButtonPressEvent et(0);
-	std::cout << et.debugString() << std::endl;
+		MouseButtonPressEvent et(0);
+		std::cout << et.debugString() << std::endl;
 
-	MouseScrollEvent etc(231, 323);
-	std::cout << etc.debugString() << std::endl;
+		MouseScrollEvent etc(231, 323);
+		std::cout << etc.debugString() << std::endl;
 
-	while (true) {}
-	return 0;
+		while (true) {}
+		return 0;
+	}
+
 }
