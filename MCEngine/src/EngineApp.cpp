@@ -6,6 +6,8 @@
 
 #include "Logger/Logger.h"
 
+using namespace std;
+
 namespace MCEngine {
 	EngineApp::EngineApp()
 	{
@@ -17,6 +19,7 @@ namespace MCEngine {
 
 	int EngineApp::start()
 	{
+		string s;
 		Logger::init();
 		KeyboardPressEvent e(21, false);
 		//std::cout << e.debugString() << std::endl;
@@ -24,12 +27,20 @@ namespace MCEngine {
 		MINT_INFO(2323232);
 
 		MouseButtonPressEvent et(0);
-		std::cout << et.debugString() << std::endl;
+		cout << et.debugString() << endl;
 
 		MouseScrollEvent etc(231, 323);
-		std::cout << etc.debugString() << std::endl;
+		cout << etc.debugString() << endl;
 
-		while (true) {}
+		while (true) {
+			OPTICK_FRAME("MCEngine");
+			cout << "Type yes to shutdown\n$ ";
+			cin >> s;
+			if (s == "yes")
+				break;
+		}
+		OPTICK_SHUTDOWN();
+
 		return 0;
 	}
 
