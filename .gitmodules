@@ -1,3 +1,6 @@
 [submodule "MCEngine/external/spdlog"]
 	path = MCEngine/external/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "MCEngine/external/glfw"]
+	path = MCEngine/external/glfw
+	url = https://github.com/glfw/glfw

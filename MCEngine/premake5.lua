@@ -11,7 +11,10 @@ project "MCEngine"
         "./src/**.h"
     }
 
-    includedirs {"$(SolutionDir)MCEngine/src"}
+    includedirs {
+        "$(SolutionDir)MCEngine/src",
+        "$(SolutionDir)MCEngine/external/glfw/include/GLFW",
+    }
 
     externalincludedirs {
         "$(SolutionDir)MCEngine/external/spdlog/include",
