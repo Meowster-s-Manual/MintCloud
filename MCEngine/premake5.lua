@@ -1,3 +1,5 @@
+include "external/optick" 
+
 project "MCEngine"
     kind "SharedLib"
     language "C++"
@@ -18,17 +20,13 @@ project "MCEngine"
 
     externalincludedirs {
         "$(SolutionDir)MCEngine/external/spdlog/include",
-        "$(SolutionDir)MCEngine/external/optick/include"
+        "$(SolutionDir)MCEngine/external/optick/src"
     }
 
     externalwarnings "Off"
 
     pchheader "pch.h"
     pchsource "./src/pch.cpp"
-
-    libdirs{
-        "$(SolutionDir)MCEngine/external/optick/lib/x64/%{cfg.buildcfg}"
-    }
 
     links{
         "OptickCore"
@@ -40,7 +38,6 @@ project "MCEngine"
         defines{"WIN_OS","BUILD_DLL","OPTICK_EXPORTS"}
 
         postbuildcommands { 
-            "{MKDIR}  $(SolutionDir)" .. outputdir .. "/bin/MCGame",  
-            "{COPY} $(SolutionDir)MCEngine/external/optick/lib/x64/%{cfg.buildcfg}/OptickCore.dll $(SolutionDir)" .. outputdir .. "/bin/MCGame",
+            "{MKDIR}  $(SolutionDir)" .. outputdir .. "/bin/MCGame",
             "{COPY} %{cfg.buildtarget.relpath} $(SolutionDir)" .. outputdir .. "/bin/MCGame"
         }

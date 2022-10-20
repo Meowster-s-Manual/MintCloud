@@ -34,10 +34,12 @@ namespace MCEngine {
 
 		while (true) {
 			OPTICK_FRAME("MCEngine");
-			cout << "Type yes to shutdown\n$ ";
-			cin >> s;
-			if (s == "yes")
-				break;
+			//cout << "Type yes to shutdown\n$ ";
+			//cin >> s;
+			//if (s == "yes")
+			//	break;
+			cout << ".";
+			Sleep(500);
 		}
 		OPTICK_SHUTDOWN();
 
