@@ -5,6 +5,7 @@
 #include "EventSystem/Events/MouseEvent.h"
 
 #include "Logger/Logger.h"
+#include <GLFW/glfw3.h>
 
 using namespace std;
 
@@ -31,6 +32,11 @@ namespace MCEngine {
 
 		MouseScrollEvent etc(231, 323);
 		cout << etc.debugString() << endl;
+
+		GLFWwindow* wnd;
+		glfwInit();
+		wnd = glfwCreateWindow(800, 600, "Hello World!", nullptr, nullptr);
+		glfwMakeContextCurrent(wnd);
 
 		while (true) {
 			OPTICK_FRAME("MCEngine");

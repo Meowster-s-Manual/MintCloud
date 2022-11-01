@@ -1,4 +1,5 @@
 include "external/optick" 
+include "external/glfw"
 
 project "MCEngine"
     kind "SharedLib"
@@ -15,12 +16,12 @@ project "MCEngine"
 
     includedirs {
         "$(SolutionDir)MCEngine/src",
-        "$(SolutionDir)MCEngine/external/glfw/include/GLFW",
     }
 
     externalincludedirs {
         "$(SolutionDir)MCEngine/external/spdlog/include",
-        "$(SolutionDir)MCEngine/external/optick/src"
+        "$(SolutionDir)MCEngine/external/optick/src",
+        "$(SolutionDir)MCEngine/external/glfw/include",
     }
 
     externalwarnings "Off"
@@ -29,13 +30,14 @@ project "MCEngine"
     pchsource "./src/pch.cpp"
 
     links{
-        "OptickCore"
+        "OptickCore",
+        "GLFW",
     }
 
     filter "system:windows"
         staticruntime "On"
         systemversion "latest"
-        defines{"WIN_OS","BUILD_DLL","OPTICK_EXPORTS"}
+        defines{"WIN_OS","BUILD_DLL"}
 
         postbuildcommands { 
             "{MKDIR}  $(SolutionDir)" .. outputdir .. "/bin/MCGame",
