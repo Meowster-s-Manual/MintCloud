@@ -15,6 +15,7 @@ project "MCEngine"
     }
 
     includedirs {
+        "C:/VulkanSDK/1.3.224.1/Include",
         "$(SolutionDir)MCEngine/src",
     }
 
@@ -22,6 +23,11 @@ project "MCEngine"
         "$(SolutionDir)MCEngine/external/spdlog/include",
         "$(SolutionDir)MCEngine/external/optick/src",
         "$(SolutionDir)MCEngine/external/glfw/include",
+        "$(SolutionDir)MCEngine/external/glm",
+    }
+
+    libdirs {
+        "C:/VulkanSDK/1.3.224.1/Lib"
     }
 
     externalwarnings "Off"
@@ -32,6 +38,7 @@ project "MCEngine"
     links{
         "OptickCore",
         "GLFW",
+        "vulkan-1.lib"
     }
 
     filter "system:windows"

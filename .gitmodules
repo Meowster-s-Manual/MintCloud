@@ -7,3 +7,6 @@
 [submodule "MCEngine/external/spdlog"]
 	path = MCEngine/external/spdlog
 	url = https://github.com/Meowster-s-Manual/spdlog
+[submodule "MCEngine/external/glm"]
+	path = MCEngine/external/glm
+	url = https://github.com/Meowster-s-Manual/glm.git

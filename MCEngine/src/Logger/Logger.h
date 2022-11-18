@@ -4,7 +4,9 @@
 #define MINT_LOGGER "MintLogger"
 
 namespace MCEngine {
-	class ENGINE_API Logger
+	template class ENGINE_API std::shared_ptr<spdlog::logger>;
+
+	class ENGINE_API Logger 
 	{
 	public:
 		static void init();
