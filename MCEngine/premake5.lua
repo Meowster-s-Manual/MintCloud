@@ -27,7 +27,7 @@ project "MCEngine"
     }
 
     libdirs {
-        "C:/VulkanSDK/1.3.224.1/Lib"
+        "C:/VulkanSDK/1.3.231.1/Lib"
     }
 
     externalwarnings "Off"
