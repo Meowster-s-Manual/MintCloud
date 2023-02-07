@@ -2,19 +2,27 @@
 #include "Macros.h"
 
 #ifdef WIN_OS
-	#include "Windows/window.h"
+	#include "Windows/SysWindow.h"
 #elif LNX_OS
-	#include "Linux/window.h"
+	#include "Linux/SysWindow.h"
 #endif
 
 namespace MCEngine {
-	class ENGINE_API AppWindow
+	class ENGINE_API Window
 	{
 	public:
-		AppWindow();
-		~AppWindow();
+		Window();
+		~Window();
 
-		int Init();
+		int init(std::string windowName);
+		int windowShouldClose();
+		void pollEvents();
+
+		SysWindow* sysWindow;
+		GLFWwindow* window;
+
+		int windowWidth;
+		int windowHeight;
 	private:
 	};
 }
