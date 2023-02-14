@@ -15,7 +15,7 @@ project "MCEngine"
     }
 
     includedirs {
-        "C:/VulkanSDK/1.3.231.1/Include",
+        "C:/VulkanSDK/1.3.239.0/Include",
         "$(SolutionDir)MCEngine/src",
     }
 
