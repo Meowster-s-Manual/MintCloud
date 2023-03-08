@@ -21,12 +21,10 @@ int Window::init(std::string windowName)
 
 int Window::windowShouldClose()
 {
-	OPTICK_EVENT();
 	return glfwWindowShouldClose(this->window);
 }
 
 void Window::pollEvents()
 {
-	OPTICK_EVENT();
 	glfwPollEvents();
 }

@@ -1,4 +1,3 @@
-include "external/optick" 
 include "external/glfw"
 
 project "MCEngine"
@@ -21,7 +20,6 @@ project "MCEngine"
 
     externalincludedirs {
         "$(SolutionDir)MCEngine/external/spdlog/include",
-        "$(SolutionDir)MCEngine/external/optick/src",
         "$(SolutionDir)MCEngine/external/glfw/include",
         "$(SolutionDir)MCEngine/external/glm",
     }
@@ -36,7 +34,6 @@ project "MCEngine"
     pchsource "./src/pch.cpp"
 
     links{
-        "OptickCore",
         "GLFW",
         "vulkan-1.lib"
     }
