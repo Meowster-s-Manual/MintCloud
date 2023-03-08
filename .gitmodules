@@ -1,6 +1,3 @@
-[submodule "MCEngine/external/optick"]
-	path = MCEngine/external/optick
-	url = https://github.com/Meowster-s-Manual/optick
 [submodule "MCEngine/external/glfw"]
 	path = MCEngine/external/glfw
 	url = https://github.com/Meowster-s-Manual/glfw
