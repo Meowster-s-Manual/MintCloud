@@ -5,8 +5,8 @@ namespace MCEngine {
 	class ENGINE_API Event
 	{
 	public:
-		Event();
-		~Event();
+		Event() {};
+		~Event() {};
 		std::string GetEvent();
 		
 	private:

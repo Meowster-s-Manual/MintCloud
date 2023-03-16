@@ -3,13 +3,7 @@
 
 using namespace MCEngine;
 
-Event::Event()
-{}
-Event::~Event()
+std::string Event::GetEvent()
 {
-
-}
-std::string GetEvent()
-{
-	return "0";
+	return this->event;
 }
