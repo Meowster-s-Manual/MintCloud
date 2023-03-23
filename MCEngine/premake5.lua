@@ -29,6 +29,8 @@ project "MCEngine"
     }
 
     externalwarnings "Off"
+    disablewarnings { "4251" }
+    linkoptions { "-IGNORE:4098" }
 
     pchheader "pch.h"
     pchsource "./src/pch.cpp"
