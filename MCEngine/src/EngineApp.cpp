@@ -58,6 +58,13 @@ EngineApp::~EngineApp()
 
 }
 
+static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, GLFW_TRUE);
+}
+
+
 int EngineApp::start()
 {
     MINT_INFO("Starting Game");
@@ -80,6 +87,7 @@ int EngineApp::start()
 
 	while (!window->windowShouldClose()) {
         window->pollEvents();
+        glfwSetKeyCallback(window->window, key_callback);
 	}
 
 	return 0;
