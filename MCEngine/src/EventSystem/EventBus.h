@@ -10,6 +10,8 @@ namespace MCEngine {
         EventBus() {};
         ~EventBus() {};
 
+        // TODO create updateAll() function to group all the updates to a single update function for game loop
+
         void addEventListeners(std::function<void(Message)> messageReceiver)
         {
             eventRecipients.push_back(messageReceiver);
