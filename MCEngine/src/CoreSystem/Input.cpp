@@ -1,13 +1,13 @@
 #include "pch.h"
-#include "InputEvent.h"
+#include "Input.h"
 
 using namespace MCEngine;
 
-void InputEvent::update()
+void Input::update()
 {
 }
 
-void InputEvent::onNotify(Message message)
+void Input::onNotify(Message message)
 {
 }
 
