@@ -28,3 +28,8 @@ void Window::pollEvents()
 {
 	glfwPollEvents();
 }
+
+GLFWwindow* Window::getWindow()
+{
+	return this->window;
+}

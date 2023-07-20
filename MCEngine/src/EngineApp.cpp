@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "EngineApp.h"
-#include "EventSystem/CoreEvents/InputEvent.h"
-#include "EventSystem/EventTemplate/EventTemplate.h"
+#include "Input/Input.h"
 
 #include "Window/Window.h"
 #include "Logger/Logger.h"
@@ -25,19 +24,13 @@ int EngineApp::start()
     Window* window = new Window();
     window->init("WHAT ARE YOU DOING ANDREW");
 
-    EventBus eventBus;
-    KeyboardEvent keyboardEvent(&eventBus);
-    EventTemplate compB(&eventBus);
+    KeyboardEvent* keyboardEvent = new KeyboardEvent(window);
 
     int counter = 0; 
 	while (!window->windowShouldClose()) {
-        // Note: going to remove update to use EventBus::updateAll()
-        keyboardEvent.update();
-        compB.update();
-        eventBus.notify();
+        keyboardEvent->update();
 
         window->pollEvents();
-        glfwSetKeyCallback(window->window, keyboardEvent.key_callback);
 	}
 
 	return 0;

@@ -17,6 +17,7 @@ namespace MCEngine {
 		int init(std::string windowName);
 		int windowShouldClose();
 		void pollEvents();
+		GLFWwindow* getWindow();
 
 		SysWindow* sysWindow;
 		GLFWwindow* window;

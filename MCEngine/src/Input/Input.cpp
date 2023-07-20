@@ -3,16 +3,20 @@
 
 using namespace MCEngine;
 
-void Input::update()
+
+KeyboardEvent::KeyboardEvent(Window*& window)
 {
+    this->window = window;
 }
 
-void Input::onNotify(Message message)
+void KeyboardEvent::update()
 {
+    glfwSetKeyCallback(this->window->getWindow(), this->key_callback);
 }
 
 void KeyboardEvent::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
+    // TODO remove testing
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GLFW_TRUE);
 }
