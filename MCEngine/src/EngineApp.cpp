@@ -6,6 +6,7 @@
 #include "Logger/Logger.h"
 
 using namespace MCEngine;
+using namespace Key;
 
 EngineApp::EngineApp()
 {
@@ -28,9 +29,11 @@ int EngineApp::start()
 
     int counter = 0; 
 	while (!window->windowShouldClose()) {
-        keyboardEvent->update();
-
         window->pollEvents();
+        if (keyboardEvent->keyPress(ESC))
+        {
+            glfwSetWindowShouldClose(window->getWindow(), GLFW_TRUE);
+        }
 	}
 
 	return 0;

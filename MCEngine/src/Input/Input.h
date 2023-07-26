@@ -1,6 +1,7 @@
 #pragma once
 #include "Macros.h"
 #include "Window/Window.h"
+#include "KeyboardCodes.h"
 
 namespace MCEngine {
     class ENGINE_API Input
@@ -16,8 +17,8 @@ namespace MCEngine {
     {
     public:
         KeyboardEvent(Window*& window);
-        void update();
         static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+        bool keyPress(KeyCode key);
     private:
         Window* window;
     };
