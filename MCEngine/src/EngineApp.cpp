@@ -26,6 +26,9 @@ int EngineApp::start()
     window->init("WHAT ARE YOU DOING ANDREW");
 
     KeyboardEvent* keyboardEvent = new KeyboardEvent(window);
+    MouseEvent* mouseEvent = new MouseEvent(window);
+
+    double mousePosX, mousePosY;
 
     int counter = 0; 
 	while (!window->windowShouldClose()) {
@@ -33,6 +36,12 @@ int EngineApp::start()
         if (keyboardEvent->keyPress(ESC))
         {
             glfwSetWindowShouldClose(window->getWindow(), GLFW_TRUE);
+        }
+        keyboardEvent->update();
+        mouseEvent->update();
+        mouseEvent->mousePosCallback(&mousePosX, &mousePosY);
+        if (keyboardEvent->keyPress(D1)) {
+            std::cout << "X: " << mousePosX << "Y: " << mousePosY << std::endl;
         }
 	}
 

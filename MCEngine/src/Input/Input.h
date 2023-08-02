@@ -2,28 +2,35 @@
 #include "Macros.h"
 #include "Window/Window.h"
 #include "KeyboardCodes.h"
+#include "MouseCodes.h"
 
 namespace MCEngine {
     class ENGINE_API Input
     {
     public:
         Input() {}
-        void virtual update() {}
 
+    protected:
+        Window* window;
     private:
     };
 
     class ENGINE_API KeyboardEvent : public Input
     {
     public:
-        KeyboardEvent(Window*& window);
-        static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+        KeyboardEvent(Window* window);
+        void update();
         bool keyPress(KeyCode key);
     private:
-        Window* window;
     };
 
     class ENGINE_API MouseEvent : public Input
     {
+    public:
+        MouseEvent(Window* window);
+        void update();
+        bool mouseButtonPress(MouseCode button);
+        void mousePosCallback(double* xpos, double* ypos);
+    private:
     };
 }
