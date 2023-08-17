@@ -8,6 +8,8 @@
 using namespace MCEngine;
 using namespace Key;
 
+EngineApp* EngineApp::engineApp = nullptr;
+
 EngineApp::EngineApp()
 {
 	Logger::init();
@@ -17,6 +19,7 @@ EngineApp::~EngineApp()
 {
 
 }
+
 
 int EngineApp::start()
 {

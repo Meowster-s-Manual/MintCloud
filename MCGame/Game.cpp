@@ -2,7 +2,7 @@
 
 int main()
 {
-	MCEngine::EngineApp* engine = new MCEngine::EngineApp();
+	MCEngine::EngineApp* engine = MCEngine::EngineApp::getEngineApp();
 
 	engine->start();
 
